@@ -9,14 +9,13 @@
   </footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .footer {
-  width: 100vw;
-  margin: 2rem 0;
+  max-width: 100%;
+  padding: 1.75rem 3.25rem;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #f7f7f7;
 }
 </style>

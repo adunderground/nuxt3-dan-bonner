@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "sass": "^1.49.7",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "vue3-carousel": "^0.1.36"
   }
 }

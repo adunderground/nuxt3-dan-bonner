@@ -1,7 +1,7 @@
 <template>
   <Title>Daniel Bonner</Title>
   <TheHeader />
-  <slot class="app" />
+  <slot />
   <TheFooter />
 </template>
 
