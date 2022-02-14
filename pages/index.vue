@@ -1,7 +1,7 @@
 <template>
   <section class="main">
     <h2 class="main__title">I am a video producer based in Washington, D.C.</h2>
-    <!-- <img class="main__hero" src="~/assets/images/dan_inguatemala.png" /> -->
+    <img class="main__hero" src="~/assets/images/dan_inguatemala.png" />
   </section>
 </template>
 

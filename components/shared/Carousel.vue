@@ -55,7 +55,7 @@ export default defineComponent({
   padding: 2rem 0;
   background-color: #f7f7f7;
   margin-bottom: 3rem;
-  
+
   &__title {
     margin-bottom: 2rem;
     text-align: center;
@@ -92,7 +92,7 @@ export default defineComponent({
     background-color: #000;
     height: 50px;
     width: 50px;
-    transition: background-color 1.3s;
+    transition: background-color 0.3s;
 
     &:hover {
       background-color: blueviolet;
