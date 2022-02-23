@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Title>DB | Projects </Title>
+    <Title>Daniel Bonner | Projects </Title>
     <h3>Projects List</h3>
     <ProjectList />
   </div>

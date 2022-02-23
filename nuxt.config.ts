@@ -8,5 +8,8 @@ export default defineNuxtConfig({
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Open+Sans&display=swap' },
     ],
-  }
+  },
+  // buildModules: [
+  //   '@vueuse/nuxt'
+  // ],
 })

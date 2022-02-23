@@ -1,7 +1,7 @@
 <template>
   <div class="carousel-cmp">
     <h3 class="carousel-cmp__title">Clients Include:</h3>
-    <Carousel :items-to-show="5" :wrap-around="true" autoplay="3000">
+    <Carousel :items-to-show="5" :wrap-around="true" :autoplay="2000">
       <Slide v-for="(name, index) in imageNames" :key="index">
         <!-- <div class="carousel__item">{{ slide }}</div> -->
         <div class="carousel__item">

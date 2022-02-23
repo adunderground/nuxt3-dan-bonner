@@ -2,9 +2,25 @@
   <section class="get-in-touch">
     <h2 class="get-in-touch__title">Get In Touch</h2>
     <div class="get-in-touch__links">
-      <a class="get-in-touch__link" href="">Link1</a>
-      <a class="get-in-touch__link" href="">Link2</a>
-      <a class="get-in-touch__link" href="">Link3</a>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        class="get-in-touch__link get-in-touch__link--vimeo"
+        href="https://vimeo.com/danielbonner"
+      >
+      </a>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        class="get-in-touch__link get-in-touch__link--mail"
+        href="mailto:daniel@daniel-bonner.com"
+      ></a>
+      <a
+        rel="noreferrer noopener"
+        target="_blank"
+        class="get-in-touch__link get-in-touch__link--linkedin"
+        href="https://www.linkedin.com/in/danieltbonner/"
+      ></a>
     </div>
   </section>
 </template>
@@ -35,6 +51,19 @@
   }
   &__link {
     margin: 0 0.5rem;
+    background-size: cover;
+    height: 34px;
+    width: 36px;
+
+    &--vimeo {
+      background-image: url("~/assets/icons/vimeo.svg");
+    }
+    &--mail {
+      background-image: url("~/assets/icons/mail.svg");
+    }
+    &--linkedin {
+      background-image: url("~/assets/icons/linkedin.svg");
+    }
   }
 }
 </style>

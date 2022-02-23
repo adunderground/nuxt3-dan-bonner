@@ -1,6 +1,6 @@
 <template>
   <section class="about">
-    <Title>DB | About </Title>
+    <Title>Daniel Bonner | About</Title>
     <div class="about__preview">
       <div class="about__heading">
         <h2 class="about__title">About</h2>

@@ -37,8 +37,6 @@ export default {
       return "/assets/images/" + props.imageSrc;
     });
 
-    console.log(props.flipped)
-
     return { imgSrc, flipped: props.flipped };
   },
 };
