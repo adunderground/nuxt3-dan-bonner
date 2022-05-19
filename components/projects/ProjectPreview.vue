@@ -53,21 +53,23 @@ export default {
     background-position: center;
     background-size: cover;
     position: absolute;
+
+     transition: all 0.3s ease-in-out;
   }
 
   &__content {
     opacity: 0;
-    
+
     position: absolute;
     width: 100%;
     height: 100%;
     inset: 0;
-    
+
     background-image: radial-gradient(#1f1f1f57, #3030303d);
 
     transition: all 0.3s ease-in-out;
 
-display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;

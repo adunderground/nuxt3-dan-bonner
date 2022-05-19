@@ -7,8 +7,7 @@
         target="_blank"
         class="get-in-touch__link get-in-touch__link--vimeo"
         href="https://vimeo.com/danielbonner"
-      >
-      </a>
+      ></a>
       <a
         rel="noreferrer noopener"
         target="_blank"
@@ -52,8 +51,8 @@
   &__link {
     margin: 0 0.5rem;
     background-size: cover;
-    height: 34px;
-    width: 36px;
+    height: 24px;
+    width: 24px;
 
     &--vimeo {
       background-image: url("~/assets/icons/vimeo.svg");

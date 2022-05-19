@@ -1,12 +1,14 @@
 <template>
   <div>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
 <script>
 export default {
-  setup() {},
+  setup() { },
 };
 </script>
 

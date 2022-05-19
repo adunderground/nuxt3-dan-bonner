@@ -20,14 +20,14 @@ export default {
     GetInTouch,
   },
 
-  setup() {
-    // const el = (ref < HTMLElement) | (null > null);
-    // const { x, y, isScrolling, arrivedState, directions } = useScroll(el);
-    // console.log(x);
-    // console.log(y);
-    // console.log(isScrolling);
-    // return { el };
-  },
+  // setup() {
+  // const el = (ref < HTMLElement) | (null > null);
+  // const { x, y, isScrolling, arrivedState, directions } = useScroll(el);
+  // console.log(x);
+  // console.log(y);
+  // console.log(isScrolling);
+  // return { el };
+  // },
 };
 </script>
 

@@ -195,6 +195,7 @@ export default {
   grid-template-rows: repeat(5, 390px);
   // grid-template-rows: repeat(auto-fill, 390px);
   grid-gap: 34px;
+  padding-bottom: 3.3vmax;
 
   // legend:
   // h - half
