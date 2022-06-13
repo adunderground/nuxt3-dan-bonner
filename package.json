@@ -9,8 +9,11 @@
     "nuxt": "^3.0.0-rc.3"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.1.9",
+    "pinia": "^2.0.14",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
-    "vue3-carousel": "^0.1.36"
+    "vue3-carousel": "^0.1.36",
+    "@vueuse/core": "^8.4.2"
   }
 }
