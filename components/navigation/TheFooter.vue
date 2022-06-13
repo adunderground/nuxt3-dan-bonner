@@ -5,7 +5,7 @@
     <p>
       <a href="mailto:daniel@daniel-bonner.com">daniel@daniel-bonner.com</a>
     </p>
-    <small>Copyright © 2021 Daniel Bonner. All Rights Reserved.</small>
+    <small>Copyright © 2022 Daniel Bonner. All Rights Reserved.</small>
   </footer>
 </template>
 
