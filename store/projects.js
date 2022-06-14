@@ -87,7 +87,7 @@ export const useProjectStore = defineStore({
       },
       {
         id: 'umd-biocomputational-engineering-program-explainer',
-        title: 'UMD_Biocomputational_Engineering',
+        title: 'UMD Biocomputational Engineering',
         my_credits: 'Producer, Editing, Animation',
         production_company: 'DD Studio',
         project_year: '2020',
@@ -152,7 +152,7 @@ export const useProjectStore = defineStore({
         const neighborIds = {
           previous: index === 0 ? null : state.projects[index - 1].id,
           next:
-            index === state.projects.length
+            index === state.projects.length - 1
               ? null
               : state.projects[index + 1].id,
         };

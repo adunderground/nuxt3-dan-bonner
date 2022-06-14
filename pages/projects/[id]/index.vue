@@ -9,6 +9,7 @@
     <p class="project__description">
       {{ description }}
     </p>
+    <ProjectNavigation :neighborIds="neighborIds"></ProjectNavigation>
   </section>
 </template>
 
@@ -16,9 +17,12 @@
 <script>
 import { computed } from "vue";
 import { useProjectStore } from '~/store/projects'
-
+import ProjectNavigation from "@/components/project/ProjectNavigation";
 
 export default {
+  components: {
+    ProjectNavigation
+  },
   setup({ params }) {
     const store = useProjectStore();
     const route = useRoute();
@@ -40,9 +44,7 @@ export default {
 
     const neighborIds = store.getProjectNeighborIds(projectID);
 
-    console.log(neighborIds);
-
-    // console.log();
+    // console.log(neighborIds);
 
     return {
       id,
@@ -55,6 +57,7 @@ export default {
       thumbnail,
       has_additional_resources,
       additional_resources,
+      neighborIds,
     }
   }
 }
