@@ -16,7 +16,7 @@ export const useProjectStore = defineStore({
                       and this was our launch into offering video services. This video was created at the launch of DD Studio to be both a demo reel of sorts,
                       as well as an ad to sell the new services to new and existing clients.`,
         resourceLink:
-          'https://vimeo.com/555344804?embedded=true&source=video_title&owner=22904072',
+          'https://player.vimeo.com/video/555344804',
         thumbnail: 'assets/images/projects/DD_Studio_Sizzle_Reel.png',
       },
       {
@@ -30,7 +30,7 @@ export const useProjectStore = defineStore({
                       in fundraising efforts for DD’s broader marketing efforts for the client. 
                       This general overview video of MercyWorks is one of my favorite videos that I’ve completed to date.`,
         resourceLink:
-          'https://vimeo.com/415984224?embedded=true&source=vimeo_logo&owner=22904072',
+          'https://player.vimeo.com/video/415984224',
         thumbnail: 'assets/images/projects/Welcome_to_MercyWorks.png',
       },
       {
@@ -43,11 +43,11 @@ export const useProjectStore = defineStore({
 
         Episode 3 is my personal favorite of the three days as we both dialed into a tight rhythm, but feel free to check out episodes 1 & 2 below as well.`,
         resourceLink:
-          'https://vimeo.com/555344804?embedded=true&source=video_title&owner=22904072',
+          'https://player.vimeo.com/video/555344804',
         has_additional_resources: true,
         additional_resources: [
-          'https://vimeo.com/638217035?embedded=true&source=vimeo_logo&owner=22904072',
-          'https://vimeo.com/638217003?embedded=true&source=vimeo_logo&owner=22904072',
+          'https://player.vimeo.com/video/638217035',
+          'https://player.vimeo.com/video/638217003',
         ],
         thumbnail: 'assets/images/projects/Enrollify_Roadshow_Series.png',
       },
@@ -61,7 +61,7 @@ export const useProjectStore = defineStore({
 
         `,
         resourceLink:
-          'https://vimeo.com/555347055?embedded=true&source=vimeo_logo&owner=22904072',
+          'https://player.vimeo.com/video/555347055',
         thumbnail: 'assets/images/projects/verify.png',
       },
       {
@@ -72,7 +72,7 @@ export const useProjectStore = defineStore({
         project_year: '2020',
         description: ``,
         resourceLink:
-          'https://vimeo.com/555342616?embedded=true&source=vimeo_logo&owner=22904072',
+          'https://player.vimeo.com/video/555342616',
         thumbnail: 'assets/images/projects/bard.png',
       },
       {
@@ -82,7 +82,7 @@ export const useProjectStore = defineStore({
         production_company: 'FYN Creative',
         project_year: '2017',
         description: ``,
-        resourceLink: 'https://vimeo.com/234422382',
+        resourceLink: 'https://player.vimeo.com/video/234422382',
         thumbnail: 'assets/images/projects/unacast.png',
       },
       {
@@ -92,7 +92,7 @@ export const useProjectStore = defineStore({
         production_company: 'DD Studio',
         project_year: '2020',
         description: ``,
-        resourceLink: 'https://vimeo.com/555346725',
+        resourceLink: 'https://player.vimeo.com/video/555346725',
         thumbnail: 'assets/images/projects/umd.jpg',
       },
       {
@@ -103,7 +103,7 @@ export const useProjectStore = defineStore({
         production_company: 'DD Studio',
         project_year: '2019',
         description: ``,
-        resourceLink: 'https://vimeo.com/415985322',
+        resourceLink: 'https://player.vimeo.com/video/415985322',
         thumbnail: 'assets/images/projects/wvu.png',
       },
       {
@@ -113,7 +113,7 @@ export const useProjectStore = defineStore({
         production_company: 'Daniel Bonner',
         project_year: '2019',
         description: ``,
-        resourceLink: 'https://vimeo.com/415983443',
+        resourceLink: 'https://player.vimeo.com/video/415983443',
         thumbnail: 'assets/images/projects/ande.png',
       },
       {
@@ -123,7 +123,7 @@ export const useProjectStore = defineStore({
         production_company: 'FYN Creative',
         project_year: '2018',
         description: ``,
-        resourceLink: 'https://vimeo.com/264429784',
+        resourceLink: 'https://player.vimeo.com/video/264429784',
         thumbnail: 'assets/images/projects/leadership.png',
       },
       {
@@ -133,7 +133,7 @@ export const useProjectStore = defineStore({
         production_company: 'Daniel Bonner',
         project_year: '2020',
         description: ``,
-        resourceLink: 'https://vimeo.com/638476193',
+        resourceLink: 'https://player.vimeo.com/video/638476193',
         thumbnail: 'assets/images/projects/nova.png',
       },
     ],

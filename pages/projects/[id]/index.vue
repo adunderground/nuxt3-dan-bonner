@@ -6,9 +6,10 @@
       <p>Production Company: <span>{{ production_company }}</span></p>
       <p>Project Year: <span> {{ project_year }}</span></p>
     </article>
-    <p class="project__description">
+    <p v-if="description.length" class="project__description">
       {{ description }}
     </p>
+    <ProjectVideo :videoLink="resourceLink"></ProjectVideo>
     <ProjectNavigation :neighborIds="neighborIds"></ProjectNavigation>
   </section>
 </template>
@@ -18,10 +19,12 @@
 import { computed } from "vue";
 import { useProjectStore } from '~/store/projects'
 import ProjectNavigation from "@/components/project/ProjectNavigation";
+import ProjectVideo from "@/components/project/ProjectVideo";
 
 export default {
   components: {
-    ProjectNavigation
+    ProjectNavigation,
+    ProjectVideo
   },
   setup({ params }) {
     const store = useProjectStore();
@@ -44,7 +47,7 @@ export default {
 
     const neighborIds = store.getProjectNeighborIds(projectID);
 
-    // console.log(neighborIds);
+    console.log(resourceLink);
 
     return {
       id,

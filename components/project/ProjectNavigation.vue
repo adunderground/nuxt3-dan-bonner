@@ -1,8 +1,11 @@
 <template>
   <div class="navigation">
-    <nuxt-link v-if="prevLink" :to="prevLink" class="navigation__link navigation__link--previous">
+    <nuxt-link v-if="prevLink" :to="prevLink" class="navigation__link navigation__link--prev">
       <i class="chevron-left"></i>
       Previous Link
+    </nuxt-link>
+    <nuxt-link :to="'/projects'" class="navigation__link navigation__link--center">
+      View All Projects
     </nuxt-link>
     <nuxt-link v-if="nextLink" :to="nextLink" class="navigation__link navigation__link--next">
       Next Link
@@ -29,10 +32,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .navigation {
-  display: flex;
+  display: grid;
+  // grid-template-areas: 'prev centr next';
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 80px;
   justify-content: space-between;
+  justify-items: center;
+  align-items: center;
 
   &__link {
+    font-size: 1.6rem;
     color: black;
     text-decoration: none;
     position: relative;
@@ -56,6 +65,20 @@ export default {
     &:hover~&::before {
       right: 0;
     }
+
+    &--center {
+      grid-column: 2/3;
+    }
+
+    &--prev {
+      grid-column: 1/2;
+      justify-self: start;
+    }
+
+    &--next {
+      grid-column: 3/4;
+      justify-self: end;
+    }
   }
 }
 
@@ -65,7 +88,7 @@ export default {
     height: 16px;
     width: 16px;
     left: -20px;
-    top: 0;
+    top: 8px;
     background-image: url('~/assets/icons/chevron-left.svg');
   }
 
@@ -74,7 +97,7 @@ export default {
     height: 16px;
     width: 16px;
     right: -20px;
-    top: 0;
+    top: 8px;
     background-image: url('~/assets/icons/chevron-right.svg');
   }
 }
