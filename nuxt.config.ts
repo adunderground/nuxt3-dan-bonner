@@ -13,5 +13,5 @@ export default defineNuxtConfig({
       },
     ],
   },
-  modules: ['@pinia/nuxt'],
+  modules: [['@nuxtjs/axios', { proxyHeaders: false }], '@pinia/nuxt'],
 });

@@ -1,4 +1,12 @@
 import { defineStore } from 'pinia';
+import axios from "axios";
+
+const BASE_URL = 'https://api.airtable.com/v0/appvW9FuAZLiPyAIZ/projects';
+const CONFIG = {
+  headers: {
+    Authorization: 'Bearer keyqeZENw1Pv4W6c6',
+  },
+};
 
 export const useProjectStore = defineStore({
   id: 'project-store',
@@ -15,8 +23,7 @@ export const useProjectStore = defineStore({
                       offered web design, dev, and marketing services, 
                       and this was our launch into offering video services. This video was created at the launch of DD Studio to be both a demo reel of sorts,
                       as well as an ad to sell the new services to new and existing clients.`,
-        resourceLink:
-          'https://player.vimeo.com/video/555344804',
+        resourceLink: 'https://player.vimeo.com/video/555344804',
         thumbnail: 'assets/images/projects/DD_Studio_Sizzle_Reel.png',
       },
       {
@@ -29,8 +36,7 @@ export const useProjectStore = defineStore({
                       In the summer of 2018, another DD Studio videographer and I traveled to Guatemala to gather footage of the programs there to be used
                       in fundraising efforts for DD’s broader marketing efforts for the client. 
                       This general overview video of MercyWorks is one of my favorite videos that I’ve completed to date.`,
-        resourceLink:
-          'https://player.vimeo.com/video/415984224',
+        resourceLink: 'https://player.vimeo.com/video/415984224',
         thumbnail: 'assets/images/projects/Welcome_to_MercyWorks.png',
       },
       {
@@ -42,8 +48,7 @@ export const useProjectStore = defineStore({
         description: `Our goal was to film and edit daily recap videos for a three-day-long podcasting roadshow we embarked on around the New England area. The catch? Each recap was to be posted the next day. Zach, the host of the Roadshow, and I both were completely winded by the end of the trip, but the sense of accomplishment from successfully completing and posting all three recaps on schedule is one of the highlights in my career so far.
 
         Episode 3 is my personal favorite of the three days as we both dialed into a tight rhythm, but feel free to check out episodes 1 & 2 below as well.`,
-        resourceLink:
-          'https://player.vimeo.com/video/555344804',
+        resourceLink: 'https://player.vimeo.com/video/555344804',
         has_additional_resources: true,
         additional_resources: [
           'https://player.vimeo.com/video/638217035',
@@ -60,8 +65,7 @@ export const useProjectStore = defineStore({
         description: `VerityIQ is an education technology company that created a robust CRM (Customer Relationship Management) for the higher ed space. Then, in 2020, they launched their second product, an SIS (Student information system) that DD had been hired to market the launch of. My job was to create a video to capture the features and advantages of the product in a short animated explainer video. The DD Studio team and I got to work came out with this video that the team at Verity was very happy with.
 
         `,
-        resourceLink:
-          'https://player.vimeo.com/video/555347055',
+        resourceLink: 'https://player.vimeo.com/video/555347055',
         thumbnail: 'assets/images/projects/verify.png',
       },
       {
@@ -71,8 +75,7 @@ export const useProjectStore = defineStore({
         production_company: 'DD Studio',
         project_year: '2020',
         description: ``,
-        resourceLink:
-          'https://player.vimeo.com/video/555342616',
+        resourceLink: 'https://player.vimeo.com/video/555342616',
         thumbnail: 'assets/images/projects/bard.png',
       },
       {
@@ -138,7 +141,14 @@ export const useProjectStore = defineStore({
       },
     ],
   }),
-  actions: {},
+  actions: {
+    async fetchPosts() {
+      const response = await axios(BASE_URL, CONFIG);
+      const data = await response.data;
+      const projects = data.records.map((record) => record.fields);
+      this.projects = projects;
+    },
+  },
   getters: {
     getProjectById(state) {
       return (projectID) =>

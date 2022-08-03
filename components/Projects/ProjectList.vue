@@ -1,13 +1,7 @@
 <template>
   <section class="projects-list">
-    <ProjectPreview
-      v-for="(proj, index) in projects"
-      :key="proj.id"
-      :id="proj.id"
-      :thumbnail="proj.thumbnail"
-      :title="proj.title"
-      :gridAreaName="'p' + ++index"
-    />
+    <ProjectPreview v-for="(proj, index) in projects" :key="proj.id" :id="proj.id" :thumbnail="proj.thumbnail"
+      :title="proj.title" :gridAreaName="'p' + ++index" />
   </section>
 </template>
 
@@ -20,8 +14,15 @@ export default {
     ProjectPreview,
   },
   setup() {
-    const projectStore = useProjectStore();
-    const projects = projectStore.projects;
+    const { projects, fetchPosts } = useProjectStore();
+    // const { fetchPosts } = useProjectStore();
+
+    //  useAsyncData() or useFetch()
+
+    // const { data } = await useFetch(BASE_URL, CONFIG);
+    // console.log(data);
+
+    // fetchPosts();
 
     return { projects };
   },
