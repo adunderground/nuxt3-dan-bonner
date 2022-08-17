@@ -14,17 +14,16 @@ export default {
     ProjectPreview,
   },
   setup() {
-    const { projects, fetchPosts } = useProjectStore();
-    // const { fetchPosts } = useProjectStore();
+    // const { projects, fetchPosts } = useProjectStore();
+    const projectStore = useProjectStore();
 
-    //  useAsyncData() or useFetch()
+    const { data: projects, pending } = useAsyncData(async () => {
+      await projectStore.fetchPosts();  // go do your actual $fetch in the store
+      return projectStore.projects;  // return the value from the store's state after the fetch completes
+    });
+    console.log(projects);
 
-    // const { data } = await useFetch(BASE_URL, CONFIG);
-    // console.log(data);
-
-    // fetchPosts();
-
-    return { projects };
+    return { projects }
   },
 };
 </script>
