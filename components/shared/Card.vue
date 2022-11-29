@@ -34,7 +34,7 @@ export default {
   },
   setup(props) {
     const imgSrc = computed(() => {
-      return "/assets/images/" + props.imageSrc;
+      return "_nuxt/assets/images/" + props.imageSrc;
     });
 
     return { imgSrc, flipped: props.flipped };

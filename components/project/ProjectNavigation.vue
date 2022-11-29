@@ -1,13 +1,24 @@
 <template>
   <div class="navigation">
-    <nuxt-link v-if="prevLink" :to="prevLink" class="navigation__link navigation__link--prev">
+    <nuxt-link
+      v-if="prevLink"
+      :to="prevLink"
+      class="navigation__link navigation__link--prev"
+    >
       <i class="chevron-left"></i>
       Previous Link
     </nuxt-link>
-    <nuxt-link :to="'/projects'" class="navigation__link navigation__link--center">
+    <nuxt-link
+      :to="'/projects'"
+      class="navigation__link navigation__link--center"
+    >
       View All Projects
     </nuxt-link>
-    <nuxt-link v-if="nextLink" :to="nextLink" class="navigation__link navigation__link--next">
+    <nuxt-link
+      v-if="nextLink"
+      :to="nextLink"
+      class="navigation__link navigation__link--next"
+    >
       Next Link
       <i class="chevron-right"></i>
     </nuxt-link>
@@ -20,15 +31,20 @@ import { computed } from "vue";
 export default {
   props: ["neighborIds"],
   setup(props) {
-    const prevLink = props.neighborIds.previous ? computed(() => ("/projects/" + props.neighborIds.previous)) : null;
-    const nextLink = props.neighborIds.next ? computed(() => ("/projects/" + props.neighborIds.next)) : null;
+    console.log("navigation neighborIds", props.neighborIds);
+    const prevLink = props.neighborIds.previous
+      ? computed(() => "/projects/" + props.neighborIds.previous)
+      : null;
+    const nextLink = props.neighborIds.next
+      ? computed(() => "/projects/" + props.neighborIds.next)
+      : null;
 
     return {
       prevLink,
-      nextLink
-    }
-  }
-}
+      nextLink,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .navigation {
@@ -62,7 +78,7 @@ export default {
       right: 0;
     }
 
-    &:hover~&::before {
+    &:hover ~ &::before {
       right: 0;
     }
 
@@ -89,7 +105,7 @@ export default {
     width: 16px;
     left: -20px;
     top: 8px;
-    background-image: url('~/assets/icons/chevron-left.svg');
+    background-image: url("~/assets/icons/chevron-left.svg");
   }
 
   &-right {
@@ -98,7 +114,7 @@ export default {
     width: 16px;
     right: -20px;
     top: 8px;
-    background-image: url('~/assets/icons/chevron-right.svg');
+    background-image: url("~/assets/icons/chevron-right.svg");
   }
 }
 </style>

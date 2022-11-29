@@ -1,7 +1,10 @@
 <template>
   <nuxt-link :to="projectLink" class="project-preview__link" :style="cssVars">
     <article class="project-preview">
-      <div class="project-preview__thumbnail" :style="{ backgroundImage: 'url(' + thumbnail + ')' }"></div>
+      <div
+        class="project-preview__thumbnail"
+        :style="{ backgroundImage: 'url(_nuxt/' + thumbnail + ')' }"
+      ></div>
       <div class="project-preview__content">{{ title }}</div>
     </article>
   </nuxt-link>
@@ -13,9 +16,11 @@ import { computed } from "vue";
 export default {
   props: ["id", "title", "thumbnail", "gridAreaName"],
   setup(props) {
-    const projectLink = computed(() => ("/projects/" + props.id));
+    const projectLink = computed(() => "/projects/" + props.id);
 
-    const cssVars = computed(() => ({ "--grid-area-name": props.gridAreaName }));
+    const cssVars = computed(() => ({
+      "--grid-area-name": props.gridAreaName,
+    }));
 
     return {
       cssVars,

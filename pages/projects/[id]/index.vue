@@ -1,12 +1,18 @@
 <template>
   <section class="project">
-    <h2 class="project__title"> {{ title }} </h2>
+    <h2 class="project__title">{{ title }}</h2>
     <article class="project__credits">
-      <p>My Credits: <span>{{ my_credits }}</span></p>
-      <p>Production Company: <span>{{ production_company }}</span></p>
-      <p>Project Year: <span> {{ project_year }}</span></p>
+      <p>
+        My Credits: <span>{{ my_credits }}</span>
+      </p>
+      <p>
+        Production Company: <span>{{ production_company }}</span>
+      </p>
+      <p>
+        Project Year: <span> {{ project_year }}</span>
+      </p>
     </article>
-    <p v-if="description.length" class="project__description">
+    <p v-if="description" class="project__description">
       {{ description }}
     </p>
     <ProjectVideo :videoLink="resourceLink"></ProjectVideo>
@@ -14,56 +20,85 @@
   </section>
 </template>
 
-
 <script>
-import { computed } from "vue";
-import { useProjectStore } from '~/store/projects'
+import { useProjectStore } from "~/store/projects";
 import ProjectNavigation from "@/components/project/ProjectNavigation";
 import ProjectVideo from "@/components/project/ProjectVideo";
 
 export default {
   components: {
     ProjectNavigation,
-    ProjectVideo
+    ProjectVideo,
   },
-  setup({ params }) {
-    const store = useProjectStore();
+  setup() {
+    const projectStore = useProjectStore();
     const route = useRoute();
-
     const projectID = route.params.id;
 
-    const {
-      id,
-      title,
-      my_credits,
-      production_company,
-      project_year,
-      description,
-      resourceLink,
-      thumbnail,
-      has_additional_resources,
-      additional_resources
-    } = store.getProjectById(projectID);
+    if (!projectStore.projects.length) {
+      console.log("getting data ");
+      const { data: project } = useAsyncData(async () => {
+        await projectStore.fetchPosts(); // go do your actual $fetch in the store
+        const projectData = projectStore.getProjectById(projectID);
+        const neighborIds = projectStore.getProjectNeighborIds(projectID);
+        // console.log("neighborIds", neighborIds);
+        // console.log("projectData", projectData);
+        const project = {
+          ...projectData,
+          neighborIds,
+        };
+        console.log("project", project);
 
-    const neighborIds = store.getProjectNeighborIds(projectID);
+        return project;
+      });
+      console.log("previous", project.neighborIds.previous);
 
-    console.log(resourceLink);
+      return {
+        id: project.id,
+        title: project.title,
+        my_credits: project.my_credits,
+        production_company: project.production_company,
+        project_year: project.project_year,
+        description: project.description,
+        resourceLink: project.resourceLink,
+        thumbnail: project.thumbnail,
+        has_additional_resources: project.has_additional_resources,
+        additional_resources: project.additional_resources,
+        // neighborIds: project.neighborIds,
+      };
+    } else {
+      console.log("projects are hydrated ");
+      const {
+        id,
+        title,
+        my_credits,
+        production_company,
+        project_year,
+        description,
+        resourceLink,
+        thumbnail,
+        has_additional_resources,
+        additional_resources,
+      } = projectStore.getProjectById(projectID);
 
-    return {
-      id,
-      title,
-      my_credits,
-      production_company,
-      project_year,
-      description,
-      resourceLink,
-      thumbnail,
-      has_additional_resources,
-      additional_resources,
-      neighborIds,
+      const neighborIds = projectStore.getProjectNeighborIds(projectID);
+
+      return {
+        id,
+        title,
+        my_credits,
+        production_company,
+        project_year,
+        description,
+        resourceLink,
+        thumbnail,
+        has_additional_resources,
+        additional_resources,
+        neighborIds,
+      };
     }
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -90,7 +125,6 @@ export default {
     font-style: italic;
 
     p {
-
       margin: 0.5rem 2rem;
     }
 

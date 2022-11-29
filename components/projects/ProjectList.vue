@@ -1,14 +1,19 @@
 <template>
   <section class="projects-list">
-    <ProjectPreview v-for="(proj, index) in projects" :key="proj.id" :id="proj.id" :thumbnail="proj.thumbnail"
-      :title="proj.title" :gridAreaName="'p' + ++index" />
+    <ProjectPreview
+      v-for="(proj, index) in projects"
+      :key="proj.id"
+      :id="proj.id"
+      :thumbnail="proj.thumbnail"
+      :title="proj.title"
+      :gridAreaName="'p' + ++index"
+    />
   </section>
 </template>
 
-
 <script>
 import ProjectPreview from "@/components/projects/ProjectPreview";
-import { useProjectStore } from '~/store/projects'
+import { useProjectStore } from "~/store/projects";
 export default {
   components: {
     ProjectPreview,
@@ -18,12 +23,11 @@ export default {
     const projectStore = useProjectStore();
 
     const { data: projects, pending } = useAsyncData(async () => {
-      await projectStore.fetchPosts();  // go do your actual $fetch in the store
-      return projectStore.projects;  // return the value from the store's state after the fetch completes
+      await projectStore.fetchPosts(); // go do your actual $fetch in the store
+      return projectStore.projects; // return the value from the store's state after the fetch completes
     });
-    console.log(projects);
 
-    return { projects }
+    return { projects };
   },
 };
 </script>

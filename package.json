@@ -6,12 +6,12 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0-rc.6"
+    "nuxt": "3.0.0"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.3.1",
+    "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^8.4.2",
-    "pinia": "^2.0.17",
+    "pinia": "^2.0.27",
     "sass": "^1.49.7",
     "sass-loader": "^12.4.0",
     "vue3-carousel": "^0.1.36"
