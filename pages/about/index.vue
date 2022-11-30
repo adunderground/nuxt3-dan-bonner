@@ -6,7 +6,7 @@
         <h2 class="about__title">About</h2>
         <img
           class="about__headshot"
-          src="~/assets/images/daniel-bonner-portrait+2021.jpg"
+          src="~/assets/images/daniel-bonner-portrait.jpg"
           alt="Dan's Headshot"
         />
       </div>
@@ -39,7 +39,7 @@ const text = `Over the last 3 years, I've been at Direct Development, a digital 
     to a variety of video deliverables.`;
 
 const smallText = `In Guatemala on a shoot for MercyWorks. Photo by Francisco Garcia.`;
-const imageSrc = `Screen+Shot+2021-10-25+at+4.49.30+PM.jpg`;
+const imageSrc = `In-Guatemala.jpg`;
 
 const text1 = `Prior to Direct Development, I was a full-time freelancer, working with a variety of clients of my own, 
     as well as with several production companies.

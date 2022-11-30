@@ -3,7 +3,7 @@
     <article class="project-preview">
       <div
         class="project-preview__thumbnail"
-        :style="{ backgroundImage: 'url(_nuxt/' + thumbnail + ')' }"
+        :style="{ backgroundImage: 'url(~/' + thumbnail + ')' }"
       ></div>
       <div class="project-preview__content">{{ title }}</div>
     </article>

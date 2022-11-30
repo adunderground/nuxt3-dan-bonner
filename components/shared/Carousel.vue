@@ -5,7 +5,7 @@
       <Slide v-for="(name, index) in imageNames" :key="index">
         <!-- <div class="carousel__item">{{ slide }}</div> -->
         <div class="carousel__item">
-          <img :src="`_nuxt/assets/images/carousel/${name}`" alt="" />
+          <img :src="`~/assets/images/carousel/${name}`" alt="" />
         </div>
       </Slide>
 
