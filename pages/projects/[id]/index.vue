@@ -35,68 +35,42 @@ export default {
     const route = useRoute();
     const projectID = route.params.id;
 
-    if (!projectStore.projects.length) {
-      console.log("getting data ");
-      const { data: project } = useAsyncData(async () => {
-        await projectStore.fetchPosts(); // go do your actual $fetch in the store
-        const projectData = projectStore.getProjectById(projectID);
-        const neighborIds = projectStore.getProjectNeighborIds(projectID);
-        // console.log("neighborIds", neighborIds);
-        // console.log("projectData", projectData);
-        const project = {
-          ...projectData,
-          neighborIds,
-        };
-        console.log("project", project);
+    // middleware needed to hydrate projects data on the server
+    // in order to load a single project page
+    // without navigating to all projects first
 
-        return project;
-      });
-      console.log("previous", project.neighborIds.previous);
+    definePageMeta({
+      middleware: "hydrate-project",
+    });
 
-      return {
-        id: project.id,
-        title: project.title,
-        my_credits: project.my_credits,
-        production_company: project.production_company,
-        project_year: project.project_year,
-        description: project.description,
-        resourceLink: project.resourceLink,
-        thumbnail: project.thumbnail,
-        has_additional_resources: project.has_additional_resources,
-        additional_resources: project.additional_resources,
-        // neighborIds: project.neighborIds,
-      };
-    } else {
-      console.log("projects are hydrated ");
-      const {
-        id,
-        title,
-        my_credits,
-        production_company,
-        project_year,
-        description,
-        resourceLink,
-        thumbnail,
-        has_additional_resources,
-        additional_resources,
-      } = projectStore.getProjectById(projectID);
+    const {
+      id,
+      title,
+      my_credits,
+      production_company,
+      project_year,
+      description,
+      resourceLink,
+      thumbnail,
+      has_additional_resources,
+      additional_resources,
+    } = projectStore.getProjectById(projectID);
 
-      const neighborIds = projectStore.getProjectNeighborIds(projectID);
+    const neighborIds = projectStore.getProjectNeighborIds(projectID);
 
-      return {
-        id,
-        title,
-        my_credits,
-        production_company,
-        project_year,
-        description,
-        resourceLink,
-        thumbnail,
-        has_additional_resources,
-        additional_resources,
-        neighborIds,
-      };
-    }
+    return {
+      id,
+      title,
+      my_credits,
+      production_company,
+      project_year,
+      description,
+      resourceLink,
+      thumbnail,
+      has_additional_resources,
+      additional_resources,
+      neighborIds,
+    };
   },
 };
 </script>

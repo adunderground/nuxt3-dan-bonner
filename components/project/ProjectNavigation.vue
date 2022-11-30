@@ -26,17 +26,14 @@
 </template>
 
 <script>
-import { computed } from "vue";
-
 export default {
   props: ["neighborIds"],
   setup(props) {
-    console.log("navigation neighborIds", props.neighborIds);
     const prevLink = props.neighborIds.previous
-      ? computed(() => "/projects/" + props.neighborIds.previous)
+      ? computed(() => "/projects/" + props.neighborIds?.previous)
       : null;
     const nextLink = props.neighborIds.next
-      ? computed(() => "/projects/" + props.neighborIds.next)
+      ? computed(() => "/projects/" + props.neighborIds?.next)
       : null;
 
     return {

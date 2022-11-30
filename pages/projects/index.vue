@@ -2,19 +2,9 @@
   <div>
     <Title>Daniel Bonner | Projects</Title>
     <h3 class="title">Projects List</h3>
-    <ProjectList />
+    <ProjectsProjectList />
   </div>
 </template>
-
-<script>
-import ProjectList from "@/components/projects/ProjectList";
-
-export default {
-  components: {
-    ProjectList,
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .title {

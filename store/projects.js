@@ -1,20 +1,20 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-const BASE_URL = 'https://api.airtable.com/v0/appvW9FuAZLiPyAIZ/projects';
+const BASE_URL = "https://api.airtable.com/v0/appvW9FuAZLiPyAIZ/projects";
 const CONFIG = {
   headers: {
-    Authorization: 'Bearer keyqeZENw1Pv4W6c6',
+    Authorization: "Bearer keyqeZENw1Pv4W6c6",
   },
 };
 
 export const useProjectStore = defineStore({
-  id: 'project-store',
+  id: "project-store",
   state: () => ({
     projects: [],
-    // 
+    //
   }),
   actions: {
-    async fetchPosts() {
+    async fetchProjects() {
       // const response = await axios(BASE_URL, CONFIG);
       const data = await $fetch(BASE_URL, CONFIG);
       const projects = data.records.map((record) => record.fields);

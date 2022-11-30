@@ -19,11 +19,10 @@ export default {
     ProjectPreview,
   },
   setup() {
-    // const { projects, fetchPosts } = useProjectStore();
     const projectStore = useProjectStore();
 
     const { data: projects, pending } = useAsyncData(async () => {
-      await projectStore.fetchPosts(); // go do your actual $fetch in the store
+      await projectStore.fetchProjects(); // go do your actual $fetch in the store
       return projectStore.projects; // return the value from the store's state after the fetch completes
     });
 

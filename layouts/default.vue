@@ -1,19 +1,6 @@
 <template>
   <Title>Daniel Bonner</Title>
-  <TheHeader />
+  <NavigationTheHeader />
   <slot />
-  <TheFooter />
+  <NavigationTheFooter />
 </template>
-
-
-<script>
-import TheHeader from "@/components/navigation/TheHeader";
-import TheFooter from "@/components/navigation/TheFooter";
-
-export default {
-  components: {
-    TheHeader,
-    TheFooter,
-  },
-};
-</script>

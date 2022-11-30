@@ -5,31 +5,9 @@
       <img src="~/assets/images/dan_inguatemala.png" />
     </div>
   </section>
-  <ProjectList />
-  <GetInTouch />
+  <ProjectsProjectList />
+  <SharedGetInTouch />
 </template>
-
-<script>
-import ProjectList from "@/components/projects/ProjectList";
-import GetInTouch from "@/components/shared/GetInTouch";
-// import { useScroll } from "@vueuse/core";
-
-export default {
-  components: {
-    ProjectList,
-    GetInTouch,
-  },
-
-  // setup() {
-  // const el = (ref < HTMLElement) | (null > null);
-  // const { x, y, isScrolling, arrivedState, directions } = useScroll(el);
-  // console.log(x);
-  // console.log(y);
-  // console.log(isScrolling);
-  // return { el };
-  // },
-};
-</script>
 
 <style lang="scss" scoped>
 .main {
