@@ -6,6 +6,12 @@
   </div>
 </template>
 
+<script setup>
+definePageMeta({
+  middleware: "hydrate-projects",
+});
+</script>
+
 <style lang="scss" scoped>
 .title {
   padding: 3.3vmax 4vw;

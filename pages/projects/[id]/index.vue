@@ -40,7 +40,7 @@ export default {
     // without navigating to all projects first
 
     definePageMeta({
-      middleware: "hydrate-project",
+      middleware: "hydrate-projects",
     });
 
     const {

@@ -9,6 +9,12 @@
   <SharedGetInTouch />
 </template>
 
+<script setup>
+definePageMeta({
+  middleware: "hydrate-projects",
+});
+</script>
+
 <style lang="scss" scoped>
 .main {
   padding: 3.3vmax 4vw;

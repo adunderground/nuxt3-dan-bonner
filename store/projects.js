@@ -1,12 +1,5 @@
 import { defineStore } from "pinia";
 
-const BASE_URL = "https://api.airtable.com/v0/appvW9FuAZLiPyAIZ/projects";
-const CONFIG = {
-  headers: {
-    Authorization: "Bearer keyqeZENw1Pv4W6c6",
-  },
-};
-
 export const useProjectStore = defineStore({
   id: "project-store",
   state: () => ({
@@ -15,8 +8,25 @@ export const useProjectStore = defineStore({
   }),
   actions: {
     async fetchProjects() {
+      // these helped to figure out how to use the env variables in nuxt config and then in pinia store
+
+      // https://nuxt.com/docs/api/composables/use-runtime-config#useruntimeconfig
+      // https://github.com/nuxt/framework/discussions/3726
+      // https://stackoverflow.com/questions/72178590/environment-variables-in-nuxt-3-with-pinia
+
+      // the final solution was to call the useRuntimeConfig() inside the fetchProjects action
+      const { airtableToken, airtableURL } = useRuntimeConfig();
+
+      const CONFIG = {
+        headers: {
+          Authorization: `Bearer ${airtableToken}`,
+        },
+      };
+
+      // instead of axios using the build in $fetch method
       // const response = await axios(BASE_URL, CONFIG);
-      const data = await $fetch(BASE_URL, CONFIG);
+
+      const data = await $fetch(airtableURL, CONFIG);
       const projects = data.records.map((record) => record.fields);
       this.projects = projects;
     },

@@ -21,12 +21,12 @@ export default {
   setup() {
     const projectStore = useProjectStore();
 
-    const { data: projects, pending } = useAsyncData(async () => {
-      await projectStore.fetchProjects(); // go do your actual $fetch in the store
-      return projectStore.projects; // return the value from the store's state after the fetch completes
-    });
+    // const { data: projects, pending } = useAsyncData(async () => {
+    //   await projectStore.fetchProjects(); // go do your actual $fetch in the store
+    //   return projectStore.projects; // return the value from the store's state after the fetch completes
+    // });
 
-    return { projects };
+    return { projects: projectStore.projects };
   },
 };
 </script>

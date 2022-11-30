@@ -13,4 +13,11 @@ export default defineNuxtConfig({
   },
   // modules: [['@nuxtjs/axios', { proxyHeaders: false }], '@pinia/nuxt'],
   modules: ["@pinia/nuxt"],
+  runtimeConfig: {
+    airtableToken: process.env.AIRTABLE_API_TOKEN,
+
+    public: {
+      airtableURL: process.env.AIRTABLE_BASE_URL,
+    },
+  },
 });
