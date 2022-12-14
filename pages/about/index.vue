@@ -6,7 +6,7 @@
         <h2 class="about__title">About</h2>
         <img
           class="about__headshot"
-          src="~/assets/images/daniel-bonner-portrait.jpg"
+          src="/images/daniel-bonner-portrait.jpg"
           alt="Dan's Headshot"
         />
       </div>
@@ -31,6 +31,11 @@
 </template>
 
 <script setup>
+
+definePageMeta({
+  middleware: "hydrate-projects",
+});
+
 const text = `Over the last 3 years, I've been at Direct Development, a digital marketing agency that 
     works with higher education and non-profit clients. 
     In 2019, I established a video wing of the agency, called DD Studio, to meet the growing demand for video 

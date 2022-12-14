@@ -102,7 +102,7 @@ export default {
     width: 16px;
     left: -20px;
     top: 8px;
-    background-image: url("~/assets/icons/chevron-left.svg");
+    background-image: url("/icons/chevron-left.svg");
   }
 
   &-right {
@@ -111,7 +111,7 @@ export default {
     width: 16px;
     right: -20px;
     top: 8px;
-    background-image: url("~/assets/icons/chevron-right.svg");
+    background-image: url("/icons/chevron-right.svg");
   }
 }
 </style>

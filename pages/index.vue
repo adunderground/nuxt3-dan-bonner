@@ -2,7 +2,7 @@
   <section class="main">
     <h2 class="main__title">I am a video producer based in Washington, D.C.</h2>
     <div class="main__image" ref="el">
-      <img src="~/assets/images/dan_inguatemala.png" />
+      <img src="/images/dan_inguatemala.png" />
     </div>
   </section>
   <ProjectsProjectList />

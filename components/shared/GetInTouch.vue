@@ -55,13 +55,13 @@
     width: 24px;
 
     &--vimeo {
-      background-image: url("~/assets/icons/vimeo.svg");
+      background-image: url("/icons/vimeo.svg");
     }
     &--mail {
-      background-image: url("~/assets/icons/mail.svg");
+      background-image: url("/icons/mail.svg");
     }
     &--linkedin {
-      background-image: url("~/assets/icons/linkedin.svg");
+      background-image: url("/icons/linkedin.svg");
     }
   }
 }

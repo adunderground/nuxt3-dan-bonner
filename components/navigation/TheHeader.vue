@@ -4,7 +4,7 @@
       <NuxtLink to="/"
         ><img
           class="header__logo"
-          src="~/assets/images/db_logo.png"
+          src="/images/db_logo.png"
           alt="Dan Bonner Logo"
       /></NuxtLink>
     </div>
