@@ -50,6 +50,23 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+html.dark-mode {
+  .carousel-cmp {
+    background-color: lighten(#1b1c1e, 15%);
+
+    .carousel {
+      &__next,
+      &__prev {
+        border: 1px solid white;
+        background-color: #000;
+        &:hover {
+          background-color: blueviolet;
+        }
+      }
+    }
+  }
+}
+
 .carousel-cmp {
   padding: 2rem 0;
   background-color: #f7f7f7;

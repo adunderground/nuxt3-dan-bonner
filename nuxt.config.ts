@@ -12,7 +12,11 @@ export default defineNuxtConfig({
     ],
   },
   // modules: [['@nuxtjs/axios', { proxyHeaders: false }], '@pinia/nuxt'],
-  modules: ["@pinia/nuxt"],
+  modules: ["@pinia/nuxt", '@nuxtjs/color-mode'],
+  colorMode: {
+    preference: 'light', // default value of $colorMode.preference
+    fallback: 'light', // fallback value if not system preference found
+  },
   runtimeConfig: {
     airtableToken: process.env.AIRTABLE_API_TOKEN,
 

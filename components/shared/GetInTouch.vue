@@ -25,6 +25,11 @@
 </template>
 
 <style lang="scss" scoped>
+html.dark-mode {
+  .get-in-touch {
+    background-color: lighten(#1b1c1e, 15%);
+  }
+}
 .get-in-touch {
   display: flex;
   flex-direction: column;
