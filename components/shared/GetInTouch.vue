@@ -52,6 +52,7 @@ html.dark-mode {
   &__links {
     display: flex;
     justify-content: center;
+    margin-top: 0.75rem;
   }
   &__link {
     margin: 0 0.5rem;
