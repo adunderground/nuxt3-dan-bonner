@@ -71,6 +71,10 @@ html.dark-mode {
     text-decoration: none;
     position: relative;
 
+    @media (width <= 620px) {
+      font-size: 1rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -115,6 +119,10 @@ html.dark-mode {
     left: -20px;
     top: 8px;
     background-image: url("/icons/chevron-left.svg");
+
+    @media (width <= 620px) {
+      left: -15px;
+    }
   }
 
   &-right {
@@ -124,6 +132,10 @@ html.dark-mode {
     right: -20px;
     top: 8px;
     background-image: url("/icons/chevron-right.svg");
+
+    @media (width <= 620px) {
+      right: -15px;
+    }
   }
 }
 </style>
