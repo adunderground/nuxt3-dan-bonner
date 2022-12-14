@@ -25,6 +25,10 @@ definePageMeta({
     text-align: left;
     font-size: 64px;
     font-weight: 100;
+
+    @media (width <= 620px) {
+      font-size: 42px;
+    }
   }
 
   &__image {

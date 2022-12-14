@@ -31,7 +31,6 @@
 </template>
 
 <script setup>
-
 definePageMeta({
   middleware: "hydrate-projects",
 });
@@ -62,12 +61,25 @@ const imageSrc1 = `IMG_1050.jpg`;
     display: flex;
     justify-content: space-between;
     padding: 6.6vmax 4vw;
+
+    @media (width <= 980px) {
+      display: flex;
+      flex-flow: column wrap;
+    }
   }
 
   &__heading {
     width: 50%;
     display: flex;
     justify-content: space-between;
+
+    @media (width <= 980px) {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+    }
   }
 
   &__text {
@@ -92,6 +104,10 @@ const imageSrc1 = `IMG_1050.jpg`;
     font-size: 2.75rem;
     font-weight: 100;
     width: 30%;
+
+    @media (width <= 980px) {
+      width: 0%;
+    }
   }
 
   &__headshot {

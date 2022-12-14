@@ -44,6 +44,18 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+html.dark-mode {
+  .navigation {
+    &__link {
+      color: white;
+
+      &::before {
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+}
+
 .navigation {
   display: grid;
   // grid-template-areas: 'prev centr next';

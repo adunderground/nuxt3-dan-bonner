@@ -59,5 +59,27 @@ export default {
     ". p5 p5 p6 p6 p6 p6 ."
     ". p7 p7 p7 p8 p8 p8 ."
     ". p9 p9 p10 p10 p11 p11 .";
+
+  @media (width <= 1660px) {
+    grid-template-columns: 30px repeat(6, 1fr) 30px;
+    grid-template-rows: repeat(5, 400px);
+  }
+  @media (width <= 1220px) {
+    grid-template-columns: 10px repeat(6, 1fr) 10px;
+    grid-template-rows: repeat(5, 400px);
+  }
+  @media (width <= 680px) {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+    padding: 10px;
+
+    * {
+      width: 100%;
+      height: 400px;
+    }
+    // grid-template-columns: 10px repeat(6, 1fr) 10px;
+    // grid-template-rows: repeat(5, 400px);
+  }
 }
 </style>

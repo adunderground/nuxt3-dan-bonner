@@ -72,6 +72,10 @@ html.dark-mode {
   background-color: #f7f7f7;
   margin-bottom: 3rem;
 
+  @media (width < 768px) {
+    display: none;
+  }
+
   &__title {
     margin-bottom: 2rem;
     text-align: center;

@@ -176,5 +176,13 @@ html.dark-mode {
       }
     }
   }
+
+  @media (width <= 620px) {
+    flex-flow: column wrap;
+
+    &__logo {
+      margin-bottom: 1.5rem;
+    }
+  }
 }
 </style>

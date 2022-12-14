@@ -50,6 +50,11 @@ export default {
   margin: 6.6vmax 4vw;
   display: flex;
 
+  @media (width <= 940px) {
+    flex-flow: column-reverse wrap;
+    align-items: center;
+  }
+
   &__text {
     width: 50%;
     // margin-right: 10%;
@@ -58,10 +63,18 @@ export default {
     flex-direction: column;
     justify-content: center;
 
+    @media (width <= 940px) {
+      width: 80%;
+    }
+
     p {
       max-width: 50ch;
       font-size: 1.25rem;
       font-weight: 100;
+
+      @media (width <= 940px) {
+        max-width: 100%;
+      }
     }
     small {
       font-style: italic;
@@ -74,6 +87,9 @@ export default {
     img {
       border-radius: 0.75rem;
       max-width: 560px;
+      @media (width <= 1280px) {
+        max-width: 30vw;
+      }
     }
   }
 }
